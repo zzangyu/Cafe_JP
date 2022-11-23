@@ -1,0 +1,5 @@
+fetch('http://webservice.recruit.co.jp/hotpepper/gourmet/v1/').then(function(response){
+        response.text().then(function(text){
+          
+        })
+      })

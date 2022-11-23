@@ -1,0 +1,8 @@
+function fetchPage(){
+    fetch("http://webservice.recruit.co.jp/hotpepper/gourmet/v1/").then(function(response){
+        response.text().then(function(text){
+          console.log(text)
+        })
+      })
+}
+//"http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=79eb47654869941a&large_area=Z011"

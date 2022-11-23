@@ -1,0 +1,8 @@
+function fetchPage(){
+    fetch("http://webservice.recruit.co.jp/hotpepper/gourmet/v1/").then((response) => response.json())
+    .then((data) => console.log(data));
+}
+//"http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=79eb47654869941a&large_area=Z011"
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+    .then((response) => response.json())
+    .then((data) => console.log(data));

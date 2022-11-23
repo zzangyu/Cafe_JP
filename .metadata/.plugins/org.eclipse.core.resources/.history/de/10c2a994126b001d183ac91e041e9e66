@@ -1,0 +1,5 @@
+package com.cafe.control;
+
+public class ActionForward {
+
+}

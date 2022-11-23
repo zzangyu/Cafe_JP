@@ -1,0 +1,14 @@
+function fetchPage(){
+    fetch("http://webservice.recruit.co.jp/hotpepper/gourmet/v1/").then((response) => response.json())
+    .then((data) => console.log(data));
+}
+fetch("http://webservice.recruit.co.jp/hotpepper/gourmet/v1/",{
+    method : "POST",
+    headers : {
+        "Content-Type": "application/json",
+    },
+
+})
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+//"http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=79eb47654869941a&large_area=Z011"

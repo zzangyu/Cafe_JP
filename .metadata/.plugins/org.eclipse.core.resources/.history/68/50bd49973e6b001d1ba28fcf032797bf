@@ -1,0 +1,7 @@
+function fetchPage(){
+    fetch('list').then(function(response){
+    	response.text().then(function(text){
+		        
+    	})
+	})
+}

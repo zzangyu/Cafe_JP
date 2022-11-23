@@ -1,0 +1,14 @@
+function fetchPage(){
+    $.ajax({
+  	url: 'https://webservice.recruit.co.jp/hotpepper/middle_area/v1/?key=79eb47654869941a&large_area=Z011&format=jsonp',
+  	type: 'GET',
+  	dataType: 'jsonp',
+  	jsonpCallback: 'callback'
+	}).done(function(data) {
+  	var dummy = data; // 成功時 この処理はダミーなので変更してください
+	}).fail(function(data) {
+  	var dummy = data; // 失敗時
+	});
+}
+
+//"http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=79eb47654869941a&large_area=Z011"
