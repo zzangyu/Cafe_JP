@@ -1,6 +1,6 @@
 function fetchPage(lngs, lats){
     $.ajax({
-  	url: 'https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=79eb47654869941a&keyword=cafe&count=30&format=jsonp&range=5&lng='+lngs+'&lat='+lats,
+  	url: 'https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=79eb47654869941a&keyword=cafe&count=100&format=jsonp&range=5&lng='+lngs+'&lat='+lats,
   	type: 'GET',
   	dataType: 'jsonp',
 	}).done(function(data) {
@@ -25,10 +25,10 @@ function fetchPage(lngs, lats){
 		var i = 0;
 		var tags = "";
 		while(i < name.length) {			
-			tags = tags + '<li>'+name[i]+','+wifi[i]+'</li>';
+			// tags = tags + '<div>'+name[i]+','+wifi[i]+'</div>';
 			i = i + 1;
 		}
-		document.querySelector('#cafe_info').innerHTML = tags;
+		// document.querySelector('#cafe_list').innerHTML = tags;
 		
 		mapboxgl.accessToken = 'pk.eyJ1IjoiaGFuY2hhbmd5dSIsImEiOiJjbDZmb3h4d2Iwa2VnM2pvcjh3ZWI0c3h5In0.3sdZR_Tj6t5ZHWJgOinBdQ';
 		// 맵 다시 로드
@@ -37,7 +37,7 @@ function fetchPage(lngs, lats){
 			container: 'map', // container ID
 		    style: 'mapbox://styles/hanchangyu/cl6g6vdi3000215nwl6y2wchb', // style URL
 		    center: [lngs, lats], // starting position [lng, lat]
-		    zoom: 15 // starting zoom
+		    zoom: 14.5 // starting zoom
 		})
 		var j = 0;
 		while(j < lng.length){

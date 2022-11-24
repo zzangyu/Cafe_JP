@@ -12,25 +12,112 @@ a {
 a:hover {
 	color: #999;
 }
-#map {
-	width: 1000px;
+
+/* menubar */
+ul, li {
+    list-style: none;
+}
+#menubar {
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+}
+#menuber_1 {
+    position: absolute;
+    display: inline-block;
+    height: 80px;
+    padding-left: 20px;
+}
+#menuber_1 img:nth-child(1) {
+    width: 80px;
+    height: 90%;
+    margin-top: 3%;
+}
+#menuber_1 img:nth-child(2) {
+    width: 100px;
+    height: 20px;
+    margin: 0 20px 12px 0;
+}
+#menuber_2 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.ul_wrap {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+.ul_wrap > li{
+    float: left;
+    text-align: center;
+    width: 130px;
+    margin-top: 12px;
+    font-size: 18px;
+}
+#menubar ul li:hover ul{
+    display: flex;
+}
+.ul_wrap2 {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    padding: 22px 0 0 0;
+    text-align: center;
+    font-size: 16px;
+
+}
+.ul_wrap2 li:hover{
+    color: #999;
+}
+.find_bt {
+    padding: 10px 0;
+}
+
+/* map and cafe list */
+#Wrap {
+    display: flex;
+    width: 100%;
 	height: 100%;
 }
-#find_bt {
-	width: 50px;
-	height: 50px;
+#map {
+    flex: 0.7;
+	width: 100%;
+	height: 100%;
 }
+#cafe_list {
+    flex: 0.3;
+    width: 100%;
+    height: 100%;
+    background-color: antiquewhite;
+    overflow: hidden;
+}
+#cafe_list > div {
+    margin-top: 80px;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+#cafe_list div div {
+    background-color: bisque;
+}
+
+/* marker */
 .marker {
-background-image: url('../img/coffee.png');
-background-size: cover;
-width: 40px;
-height: 40px;
-cursor: pointer;
+    background-image: url('../img/coffee.png');
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
 }
-.mapboxgl-popup {
-max-width: 200px;
+    .mapboxgl-popup {
+    max-width: 200px;
 }
-.mapboxgl-popup-content {
-text-align: center;
-font-family: 'Open Sans', sans-serif;
+    .mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
 }
