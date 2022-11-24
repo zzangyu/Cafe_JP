@@ -72,9 +72,9 @@ function fetchPage(lngs, lats){
 			}
 			j = j + 1;
 		}
-		map.on('dragend', () => {			
+		map.on('dragend', () => {
 			const center = map.getCenter();
-			fetchPage(center.lng, center.lat);
+			document.querySelector('#kokode_bt').innerHTML = '<div onclick="fetchPage('+center.lng+', '+center.lat+')">ここを探そう</div>'
 		});
 			
 	}).fail(function() {

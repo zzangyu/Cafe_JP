@@ -89,6 +89,17 @@ ul, li {
 	width: 100%;
 	height: 100%;
 }
+#kokode_bt div{
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    bottom: 50px;
+    display: inline;
+    padding: 10px 20px;
+    border-radius: 2rem;
+    border: 2px solid #999;
+    background-color: white;
+}
 #cafe_list {
     flex: 0.3;
     width: 100%;

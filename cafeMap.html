@@ -59,7 +59,9 @@
         </div>
     </div>
     <div id="Wrap">
-        <div id="map"></div>
+        <div id="map">
+            <div id="kokode_bt"></div>
+        </div>
         <div id="cafe_list">
             <div>
                 <div>여기에 카페 리스트 들어감</div>
@@ -125,18 +127,24 @@
         </div>
     </div>
 	<script type="text/javascript">
-		mapboxgl.accessToken = 'pk.eyJ1IjoiaGFuY2hhbmd5dSIsImEiOiJjbDZmb3h4d2Iwa2VnM2pvcjh3ZWI0c3h5In0.3sdZR_Tj6t5ZHWJgOinBdQ'; // 계정에 있는 Public Access Token 입력
-		
-		const map = new mapboxgl.Map({
-			container: 'map', // container ID
-		    style: 'mapbox://styles/hanchangyu/cl6g6vdi3000215nwl6y2wchb', // style URL
-		    center: [139.7, 35.7], // starting position [lng, lat]
-		    zoom: 12 // starting zoom
-		});
-		map.on('dragend', () => {
-			const {lng, lat} = map.getCenter();
-			console.log(lng, lat);
-		});
+        const urlParams = new URL(location.href).searchParams;
+        const name = urlParams.get('where');
+        var lng = 0;
+        var lat = 0;
+        if(name === 'tokyo') {
+            lng = 139.6985109;
+            lat = 35.694386;
+        }
+        if(name === 'osaka') {
+            lng = 135.4962382;
+            lat = 34.7050271;
+        }
+        if(name === 'nagoya') {
+            lng = 136.8805603;
+            lat = 35.1682579;
+        }
+        console.log(name)      
+        fetchPage(lng, lat)
 	</script>
 </body>
 </html>
