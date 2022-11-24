@@ -1,5 +1,0 @@
-INDEX VERSION 1.131
-C:\cafeJp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\839874397.index
-\CafeJP\src\main\java
-C:\cafeJp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\139563980.index
-\CafeJP\src\main\java

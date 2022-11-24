@@ -1,0 +1,36 @@
+body, html {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+a {
+	text-decoration: none;
+	color: black;
+	border: 0;
+}
+a:hover {
+	color: #999;
+}
+#map {
+	width: 1000px;
+	height: 100%;
+}
+#find_bt {
+	width: 50px;
+	height: 50px;
+}
+.marker {
+background-image: url('../img/coffee.png');
+background-size: cover;
+width: 40px;
+height: 40px;
+cursor: pointer;
+}
+.mapboxgl-popup {
+max-width: 200px;
+}
+.mapboxgl-popup-content {
+text-align: center;
+font-family: 'Open Sans', sans-serif;
+}

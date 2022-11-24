@@ -1,9 +1,0 @@
-INDEX VERSION 1.4+C:\cafeJp\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1697328621.index
-839874397.index
-3103794696.index
-1000185840.index
-839874397.index
-1570710436.index
-2883059630.index
-2462595651.index
