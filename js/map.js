@@ -25,9 +25,9 @@ function fetchPage(lngs, lats){
 		var lng = shop.map(function(element){ // 경도
   			return `${element.lng}`;
 		})
-		// var urls = shop.map(function(element){
-  		// 	return `${element.urls.pc}`;
-		// })
+		var urls = shop.map(function(element){
+  			return `${element.urls.pc}`;
+		})
 		var photo = shop.map(function(element){
 			return `${element.photo.pc.l}`;
 	 	})
@@ -49,8 +49,11 @@ function fetchPage(lngs, lats){
 				}
 				tags = tags + '<div class="cafe_slide"><div><img src="'+logo_image[i]+'"><h3 class="cafe_name" onclick="openModal('+i+')">'+name[i]+'</h3></div></div>'
 				+'<div class="modal" id="'+i+'"><div class="modal_body">'
-				+'<h3 class="modal_title">'+name[i]+'<button class="exit_bt" onclick="exitModal('+i+')">X</button></h3>'
-				+'</div></div>';
+				+'<div class="modal_title">'+name[i]+'<button class="exit_bt" onclick="exitModal('+i+')">X</button></div>'
+				+'<div class="modal_title_under"><div class="modal_info_wrap"><div class="modal_img"><img src="'+photo[i]+'"></div><div class="modal_url"><div><a class="modal_url_a" href="'+urls[i]+'" target="_blank">Hotpepper Homepage</a></div></div>'
+				+'</div>'
+				+'<div class="modal_info"></div>'
+				+'</div></div></div>';
 				i = i + 1;
 			}
 		} else {

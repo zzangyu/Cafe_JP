@@ -164,22 +164,39 @@ ul, li {
     width: 100%;
     height: 100%;
     display: none;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.709);
 }
 .modal_body {
     width: 70%;
     height: 60%;
     background-color: white;
+    margin: 15px;
 }
 .exit_bt {
     float: right;
-    background-color: white;
-    font-size: 16px;
     border: 0;
-    margin-right: 15px;
+    margin-right: 5px;
+    font-size: 16px;
+    color: white;
+    background-color: #5d5151;
+}
+.exit_bt:hover {
+    cursor: pointer;
 }
 .modal_title {
+    padding-top:2%;
     text-align: center;
+    width: 100%;
+    height: 8%;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #5d5151;
+    color: white;
+}
+.modal_title_under {
+    display: flex;
+    width: 100%;
+    height: 90%;
 }
 #misenai {
     width: 100%;
@@ -193,6 +210,45 @@ ul, li {
     width: 100px;
     height: 100px;
 }
+.modal_info_wrap {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 98%;
+    padding: 1%;
+}
+.modal_img {
+    width: 100%;
+    height: 80%;
+}
+.modal_img img {
+    width: 100%;
+    height: 100%;
+}
+.modal_url {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 18%;
+}
+.modal_url div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 60%;
+    background-color: #5d51517f;
+}
+.modal_url_a:hover {
+    color: white;
+}
+.modal_info {
+    width: 70%;
+    height: 98%;
+    background-color: red;
+}
+
 /* marker */
 .marker {
     background-image: url('../img/coffee.png');
