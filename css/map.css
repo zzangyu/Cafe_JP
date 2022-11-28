@@ -3,6 +3,7 @@ body, html {
 	margin: 0;
 	width: 100%;
 	height: 100%;
+    overflow: hidden;
 }
 a {
 	text-decoration: none;
@@ -19,30 +20,30 @@ ul, li {
 }
 #menubar {
     width: 100%;
-    height: 80px;
-    position: absolute;
+    height: 10%;
     z-index: 1;
     background-color: white;
 }
+#menubar div {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
 #menuber_1 {
-    position: absolute;
-    display: inline-block;
-    height: 80px;
-    padding-left: 20px;
+    width: 200px;
+    height: 100%;
+    padding-left: 5%;
 }
 #menuber_1 img:nth-child(1) {
     width: 80px;
-    height: 90%;
-    margin-top: 3%;
+    height: 100%;
 }
 #menuber_1 img:nth-child(2) {
     width: 100px;
     height: 20px;
-    margin: 0 20px 12px 0;
+    margin: 50px 20px 0 0;
 }
 #menuber_2 {
-    display: flex;
-    justify-content: center;
     width: 100%;
     height: 100%;
 }
@@ -50,22 +51,25 @@ ul, li {
     width: 100%;
     height: 100%;
     padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
 }
-.ul_wrap > li{
+.ul_wrap > li {
     float: left;
     text-align: center;
     width: 130px;
-    margin-top: 12px;
     font-size: 18px;
 }
-#menubar ul li:hover ul{
-    display: flex;
+.ul_wrap li:hover ul{
+    display: block;
 }
 .ul_wrap2 {
     display: none;
-    flex-direction: column;
+    position: absolute;
+    z-index: 1;
     background-color: white;
-    width: 100%;
+    width: 130px;
     padding: 22px 0 0 0;
     text-align: center;
     font-size: 16px;
@@ -87,7 +91,8 @@ ul, li {
 #map {
     flex: 0.7;
 	width: 100%;
-	height: 100%;
+	height: 90%;
+    border-radius: 1rem !important;
 }
 #kokode_bt div{
     position: absolute;
@@ -103,20 +108,32 @@ ul, li {
 #cafe_list {
     flex: 0.3;
     width: 100%;
-    height: 100%;
-    background-color: antiquewhite;
-    overflow: hidden;
+    height: 90%;
 }
 #cafe_list > div {
-    margin-top: 80px;
     width: 100%;
     height: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
 }
-#cafe_list div div {
-    background-color: bisque;
+#cafe_list > div > div{
+    background-color: #402a2c;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
+.cafe_slide {
+    width: 95%;
+    height: 200px;
+    margin: 10px 0;
+    background-color: #f4f3ee;
+    border-radius: 0.5rem;
+}
+.cafe_slide img {
+    width: 100px;
+    height: 100px;
+}
 /* marker */
 .marker {
     background-image: url('../img/coffee.png');

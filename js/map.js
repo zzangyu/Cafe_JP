@@ -22,13 +22,16 @@ function fetchPage(lngs, lats){
 		var urls = shop.map(function(element){
   			return `${element.urls.pc}`;
 		})
+		var order = shop.map(function(element){
+			return `${element.photo.pc.l}`;
+	 	})
 		var i = 0;
 		var tags = "";
 		while(i < name.length) {			
-			// tags = tags + '<div>'+name[i]+','+wifi[i]+'</div>';
+			tags = tags + '<div class="cafe_slide"><img scr="'+order[i]+'"></div>'
 			i = i + 1;
 		}
-		// document.querySelector('#cafe_list').innerHTML = tags;
+		document.querySelector('.cafe_slide_wrap').innerHTML = tags;
 		
 		mapboxgl.accessToken = 'pk.eyJ1IjoiaGFuY2hhbmd5dSIsImEiOiJjbDZmb3h4d2Iwa2VnM2pvcjh3ZWI0c3h5In0.3sdZR_Tj6t5ZHWJgOinBdQ';
 		// 맵 다시 로드
@@ -65,7 +68,7 @@ function fetchPage(lngs, lats){
 				.setPopup(
 				new mapboxgl.Popup({ offset: 25 }) // add popups
 					.setHTML(
-					`<h3>${feature.properties.title}</h3><a href="${urls[j]}" target="#">HomePage</a>`
+					`<h3>${feature.properties.title}</h3><a href="${urls[j]}" target="#">Hotpepper Page</a>`
 					)
 				)
 			.addTo(map);
@@ -74,7 +77,10 @@ function fetchPage(lngs, lats){
 		}
 		map.on('dragend', () => {
 			const center = map.getCenter();
-			document.querySelector('#kokode_bt').innerHTML = '<div onclick="fetchPage('+center.lng+', '+center.lat+')">ここを探そう</div>'
+			var center_lat = center.lat; 
+			var center_lng = center.lng; 
+			fetchPage(center_lng, center_lat);
+			// document.querySelector('#kokode_bt').innerHTML = '<div onclick="fetchPage('+center.lng+', '+center.lat+')">ここを探そう</div>'
 		});
 			
 	}).fail(function() {
