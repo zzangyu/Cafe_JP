@@ -1,6 +1,6 @@
 function fetchPage(lngs, lats){
     $.ajax({
-  	url: 'https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=79eb47654869941a&keyword=cafe&count=100&format=jsonp&range=3&lng='+lngs+'&lat='+lats,
+  	url: 'https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=79eb47654869941a&keyword=cafe&type=special&count=100&format=jsonp&range=3&lng='+lngs+'&lat='+lats,
   	type: 'GET',
   	dataType: 'jsonp',
 	}).done(function(data) {
@@ -9,15 +9,6 @@ function fetchPage(lngs, lats){
 		var shop = result.shop;
 		var name = shop.map(function(element){
   			return `${element.name}`;
-		})
-		var namekana = shop.map(function(element){
-			return `${element.name_kana}`;
-	 	})
-		var midnight = shop.map(function(element){
-			return `${element.midnight}`;
-	 	})
-		var wifi = shop.map(function(element){
-  			return `${element.wifi}`;
 		})
 		var lat = shop.map(function(element){ // 위도
   			return `${element.lat}`;
@@ -34,12 +25,49 @@ function fetchPage(lngs, lats){
 		var logo_image = shop.map(function(element){
 			return `${element.logo_image}`;
 	 	})
+		var midnight = shop.map(function(element){
+			return `${element.midnight}`;
+	 	})
+		var wifi = shop.map(function(element){
+  			return `${element.wifi}`;
+		})
+		var access = shop.map(function(element){
+  			return `${element.access}`;
+		})
+		var open = shop.map(function(element){
+  			return `${element.open}`;
+		})
+		var close = shop.map(function(element){
+  			return `${element.close}`;
+		})
+		var private_room = shop.map(function(element){
+  			return `${element.private_room}`;
+		})
+		var card = shop.map(function(element){
+  			return `${element.card}`;
+		})
+		var smoking = shop.map(function(element){
+  			return `${element.non_smoking}`;
+		})
+		var parking = shop.map(function(element){
+  			return `${element.parking}`;
+		})
+		var pet = shop.map(function(element){
+  			return `${element.pet}`;
+		})
+		var coupon = shop.map(function(element){
+  			return `${element.coupon_urls.pc}`;
+		})
+		var sp = shop.map(function(element){
+  			return `${element.catch}`;
+		})
+		console.log(sp)
+
 		var logo_none = 'https://imgfp.hotp.jp/SYS/cmn/images/common/diary/custom/m30_img_noimage.gif';
 		var check = true;
 		if(name[0] === undefined) {
 			check = false;
 		}
-		console.log(check);
 		var i = 0;
 		var tags = "";
 		if(check) {
@@ -49,10 +77,19 @@ function fetchPage(lngs, lats){
 				}
 				tags = tags + '<div class="cafe_slide"><div><img src="'+logo_image[i]+'"><h3 class="cafe_name" onclick="openModal('+i+')">'+name[i]+'</h3></div></div>'
 				+'<div class="modal" id="'+i+'"><div class="modal_body">'
-				+'<div class="modal_title">'+name[i]+'<button class="exit_bt" onclick="exitModal('+i+')">X</button></div>'
-				+'<div class="modal_title_under"><div class="modal_info_wrap"><div class="modal_img"><img src="'+photo[i]+'"></div><div class="modal_url"><div><a class="modal_url_a" href="'+urls[i]+'" target="_blank">Hotpepper Homepage</a></div></div>'
+				+'<div class="modal_title"><div>'+name[i]+'</div><button class="exit_bt" onclick="exitModal('+i+')">X</button></div>'
+				+'<div class="modal_title_under"><div class="modal_info_wrap"><div class="modal_img"><img src="'+photo[i]+'"></div>'
 				+'</div>'
-				+'<div class="modal_info"></div>'
+				+'<div class="modal_info">'
+				+'<div class="modal_info_n_a"><div class="modal_info_name">✔ Access</div><div class="modal_info_answer">'+access[i]+'</div></div>'
+				+'<div class="modal_info_n_a"><div class="modal_info_name">✔ Open</div><div class="modal_info_answer">'+open[i]+'</div></div>'
+				+'<div class="modal_info_n_a"><div class="modal_info_name">✔ Close</div><div class="modal_info_answer">'+close[i]+'</div></div>'
+				+'<div class="modal_info_n_a"><div class="modal_info_name">✔ Wifi</div><div class="modal_info_answer">'+wifi[i]+'</div></div>'
+				+'<div class="modal_info_n_a"><div class="modal_info_name">✔ Card</div><div class="modal_info_answer">'+card[i]+'</div></div>'
+				+'<div class="modal_info_n_a"><div class="modal_info_name">✔ Parking</div><div class="modal_info_answer">'+parking[i]+'</div></div>'
+				+'<div class="modal_info_n_a"><div class="modal_info_name">✔ Coupon</div><div class="modal_info_answer"><a href="'+coupon[i]+'">クリックしてダウンロードする</a></div></div>'
+				+'<div class="modal_info_n_a"><div class="modal_info_name">✔ Hotpepper</div><div class="modal_info_answer"><a href="'+urls[i]+'">クリックして移動する</a></div></div>'
+				+'</div>'
 				+'</div></div></div>';
 				i = i + 1;
 			}
