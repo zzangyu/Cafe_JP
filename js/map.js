@@ -61,7 +61,6 @@ function fetchPage(lngs, lats){
 		var sp = shop.map(function(element){
   			return `${element.catch}`;
 		})
-		console.log(sp)
 
 		var logo_none = 'https://imgfp.hotp.jp/SYS/cmn/images/common/diary/custom/m30_img_noimage.gif';
 		var check = true;
@@ -97,7 +96,7 @@ function fetchPage(lngs, lats){
 			tags = '<div id="misenai"><img src="../img/uu.jpg"><h3>この辺には店がありません。</h3></div>';
 			document.querySelector('.cafe_slide_wrap').style.height = '100%';
 		}
-		document.querySelector('.cafe_slide_wrap').innerHTML = tags;
+		document.querySelector('.cafe_slide_wrap').innerHTML = tags + '<div class="pagination"></div>';
 
 		  // 맵 다시 로드
 		mapboxgl.accessToken = 'pk.eyJ1IjoiaGFuY2hhbmd5dSIsImEiOiJjbDZmb3h4d2Iwa2VnM2pvcjh3ZWI0c3h5In0.3sdZR_Tj6t5ZHWJgOinBdQ';
@@ -146,7 +145,60 @@ function fetchPage(lngs, lats){
 			var center_lng = center.lng; 
 			fetchPage(center_lng, center_lat);
 		});
-			
+		function pagination(){
+			var req_num_row = 7;
+			var $tr=jQuery('.cafe_slide');
+			var total_num_row=$tr.length;
+			var num_pages=0;
+			if(total_num_row % req_num_row ==0){
+				num_pages=total_num_row / req_num_row;
+			}
+			if(total_num_row % req_num_row >=1){
+				num_pages=total_num_row / req_num_row;
+				num_pages++;
+				num_pages=Math.floor(num_pages++);
+			}
+			for(var i=1; i<=num_pages; i++){
+				jQuery('.pagination').append("<span><a>"+i+"</a></span>");
+			  	jQuery('.pagination span:nth-child(2)').addClass("active");
+			  	jQuery('.pagination a').addClass("pagination-link");
+			}
+	  
+			$tr.each(function(i){
+				jQuery(this).hide();
+		  		if(i+1 <= req_num_row){
+					$tr.eq(i).show();
+				}
+			});
+	  
+			jQuery('.pagination a').click('.pagination-link', function(e){
+				e.preventDefault();
+				$tr.hide();
+				var page=jQuery(this).text();
+				var temp=page-1;
+				var start=temp*req_num_row;
+				var current_link = temp;
+		  
+		  		jQuery('.pagination span').removeClass("active");
+				jQuery(this).parent().addClass("active");
+		
+				for(var i=0; i< req_num_row; i++){
+					$tr.eq(start+i).show();
+				}
+		  
+				if(temp >= 1){
+					jQuery('.pagination span:first-child').removeClass("disabled");
+				} else {
+					jQuery('.pagination span:first-child').addClass("disabled");
+				}			
+			});
+		}
+	 
+		jQuery('document').ready(function(){
+			pagination();
+			jQuery('.pagination span:first-child').addClass("disabled");  
+		});
+	
 	}).fail(function() {
 		console.log('fail')
 	});

@@ -5,13 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/mouse.js"></script>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    카페인 중독 한짠, 커피 추천합니다. 골라골라~ 님 어디 살아?
+    <div id="title_wrap">
+        <h1>Coffee Sagasi</h1>
+    </div>
+    <div id="info">
+        <div id="index_info_wrap">
+            <p class="index_info">ようこそ！Hanzzanです。</p>
+            <p class="index_info">ここは日本の首都圏にあるコーヒーショップを探してあげるサイトです。</p>
+            <p class="index_info">Ajax、Jsonの勉強が終わって復習や応用、実力増進のため作ってみました。</p>
+            <p class="index_info">下のカテゴリーで地域を押してください😘</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/index.js"></script>
     <form action="cafeMap.html" method="get">
-        <button type="submit" name="where" value="tokyo">Tokyo</button>
-        <button type="submit" name="where" value="osaka">Osaka</button>
-        <button type="submit" name="where" value="nagoya">Nagoya</button>
+        <div id="map_data">
+            <div>
+                <div>
+                    <button type="submit" name="where" value="tokyo">Tokyo</button>
+                </div>
+                <div>
+                    <button type="submit" name="where" value="osaka">Osaka</button>
+                </div>
+                <div>
+                    <button type="submit" name="where" value="nagoya">Nagoya</button>
+                </div>
+            </div>
+        </div>
     </form>
+
 </body>
 </html>
