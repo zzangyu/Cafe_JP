@@ -53,9 +53,8 @@ a {
     height: auto;
 }
 #index_info_wrap {
-    width: 95%;
+    width: 100%;
     margin: 0;
-    margin-left: 5%;
     padding-bottom: 5%;
 }
 .index_info {
@@ -76,9 +75,18 @@ a {
     margin-bottom: 5%;
 }
 #map_data > div {
-    width: 100px;
-    height: 100%;
-    background-color: #a8dadc;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    height: 100%;
+}
+#map_data > div button {
+    width: 100px;
+    padding: 10px;
+    background-color: #fff;
+}
+#map_data > div button:hover {
+    cursor: pointer;
+    background-color: rgba(127, 255, 212, 0.46);
+    transition: background-color 0.5s;
 }
