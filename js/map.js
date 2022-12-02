@@ -61,8 +61,6 @@ function fetchPage(lngs, lats){
 		var sp = shop.map(function(element){
   			return `${element.catch}`;
 		})
-
-		var logo_none = 'https://imgfp.hotp.jp/SYS/cmn/images/common/diary/custom/m30_img_noimage.gif';
 		var check = true;
 		if(name[0] === undefined) {
 			check = false;
@@ -71,9 +69,6 @@ function fetchPage(lngs, lats){
 		var tags = "";
 		if(check) {
 			while(i < name.length) {
-				if(logo_image[i] == logo_none) {
-					logo_image[i] = '../js/coffee2.webp';
-				}
 				tags = tags + '<div class="cafe_slide"><div><img src="'+logo_image[i]+'"><h3 class="cafe_name" onclick="openModal('+i+')">'+name[i]+'</h3></div></div>'
 				+'<div class="modal" id="'+i+'"><div class="modal_body">'
 				+'<div class="modal_title"><div>'+name[i]+'</div><button class="exit_bt" onclick="exitModal('+i+')">X</button></div>'
