@@ -152,10 +152,11 @@ ul, li {
     height: 100%;
     align-items: center;
 }
-.cafe_slide div img {
-    padding: 5px;
+.cafe_slide > div > img {
+    margin: 5px;
     width: 100px;
     height: 100px;
+    background-color: white;
 }
 .cafe_slide:hover {
     color: black;
