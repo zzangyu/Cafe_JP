@@ -61,6 +61,7 @@ function fetchPage(lngs, lats){
 		var sp = shop.map(function(element){
   			return `${element.catch}`;
 		})
+		console.log(shop);
 		var check = true;
 		if(name[0] === undefined) {
 			check = false;
